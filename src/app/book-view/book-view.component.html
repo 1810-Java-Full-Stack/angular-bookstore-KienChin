@@ -1,0 +1,45 @@
+<div>
+  <div>
+    <span><button (click)='viewBooks()'>View Books</button></span>
+    <!--<span><button (click)='makeEdit()'>Edit Books</button></span>-->
+    
+  </div>
+  <div *ngIf='displayBooks'>
+    <div *ngFor='let book of combinedArray'>
+      <table>
+        <tr>
+          <th>Something</th>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Author</th>
+        </tr>
+        <tr>
+          <td>
+            <nav>
+              <a routerLink="/details/{{book.id}}" >Link</a>
+            </nav>
+          </td>
+          <td>{{book.id}}</td>
+          <td>
+            <span>{{book.title}}</span>
+            <span>
+              <app-update-book id='{{book.id}}'></app-update-book>
+            </span>
+          </td>
+          <td>
+            <span>{{book.author}}</span>
+            <span>
+              <app-update-author id='{{book.aId}}'></app-update-author>
+            </span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <!--<div *ngIf='displayEdits'>
+    <span><input type="text" [(ngModel)]="newId"/></span>
+    <span><input type="text" [(ngModel)]="newTitle"></span>
+    <span><input type="text" [(ngModel)]="newAuthor"></span>
+    <span><button (click)='submitUpdate()'>Submit</button></span>
+  </div> -->
+</div>

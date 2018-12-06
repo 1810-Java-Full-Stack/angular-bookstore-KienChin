@@ -1,0 +1,8 @@
+<span>
+    <button (click)='updateBook()'>update</button>
+</span> 
+<span>{{text}}</span>
+<div *ngIf="displayInputs">
+  <input type="text" [(ngModel)]='title'>
+  <button (click)='submitUpdate()'>submit</button>
+</div>

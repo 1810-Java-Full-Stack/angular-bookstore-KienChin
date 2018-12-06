@@ -1,0 +1,8 @@
+<span>
+    <button (click)='updateAuthor()'>update</button>
+</span> 
+<span>{{text}}</span>
+<div *ngIf="displayInputs">
+  <input type="text" [(ngModel)]='name'>
+  <button (click)='submitUpdate()'>submit</button>
+</div>
